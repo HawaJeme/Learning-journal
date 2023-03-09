@@ -79,7 +79,7 @@ header{
     align-self: self-start;
 }
 .blogs-container{
-    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
     grid-auto-rows: 25rem;
     gap: 30px;
     height: 100%;
@@ -92,4 +92,15 @@ header{
     grid-template:auto;
     width: 100%;
     height: 50%;
+}
+footer{
+    background: #202020;
+    color: whitesmoke;
+    text-align: center;
+    padding: 3em 4em;
+    line-height: 1.5;
+    font-size: 12px;
+}
+footer p{
+    font-weight: 100;
 }
