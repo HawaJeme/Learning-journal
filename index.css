@@ -3,14 +3,18 @@
     box-sizing: border-box;
 }
 
-/* body{
-    padding: 0 1.25rem;
-} */
 /* typography */
 .date-hero{
     font-size: 12px;
 }
-
+/* links */
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: #522727;
+}
 /* header */
 header,
 article,
@@ -43,64 +47,97 @@ header{
 .about,
 .header-title{
     font-size: 12px;
+    font-weight: 700;
     align-self: center;
+    line-height: 1.25;
+}
+.home,
+.about{
+    cursor: pointer;
+    justify-self: center;
 }
 .home{
     grid-column: 2/3;
-    justify-self: center;
 }
 .about{
     grid-column: 3/4;
-    justify-self: center;
 }
 /* articles & blogs*/
 
 .article-hero{
     display: grid;
-    grid-template-rows: 1fr 30px 1fr 2fr;
+    grid-template-rows: 2fr 30px 1fr 2fr;
     height: 20rem;
     background-image: url(images/article-image.jpg);
     background-size:cover;
     color: white;
-    gap: 5px;
 }
 .date-hero{
     grid-row: 2/3;
     align-self: center;
 }
+.title-hero,
+.preview-hero{
+    cursor: pointer;
+}
+
 .title-hero{
     font-size: 32px;
     grid-row: 3/4;
+    display: inline;
 }
 .preview-hero{
-    font-size: 18px;
+    font-size: 16px;
     grid-row: 4/5;
-    line-height: 1;
-    align-self: self-start;
+    align-self: center;
 }
 .blogs-container{
-    grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(13.6em, 1fr));
     grid-auto-rows: 25rem;
-    gap: 30px;
+    gap: 2rem;
     height: 100%;
+    margin-bottom: 1rem;
 }
 
 .blog-item{
     border: 1px solid;
+    display: grid;
+    grid-template-rows: 15rem 2rem 2.3rem auto;
+    align-items: center;
+    /* add this in @media gap: 0.25rem; */
 }
 .blog-img{
     grid-template:auto;
     width: 100%;
-    height: 50%;
+    height: 100%;
+}
+.date{
+    align-self: self-end;
+}
+.preview{
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: left;
+    color: #505050;
 }
 footer{
     background: #202020;
     color: whitesmoke;
     text-align: center;
     padding: 3em 4em;
-    line-height: 1.5;
     font-size: 12px;
 }
-footer p{
-    font-weight: 100;
+@media (min-width: 576px) {
+    header,
+    article,
+    footer{
+        padding: 2.5rem;
+    }
+}
+@media (mid-width: 1040px){
+    header,
+    article,
+    footer{
+        padding: 5rem;
+    }
 }
