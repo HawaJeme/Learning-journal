@@ -18,16 +18,16 @@ a:hover{
 /* header */
 header,
 article,
+.about-container,
 footer{
-    display: grid;
     padding: 1.25rem;
     font-family: 'Source Sans Pro';
     font-style: normal;
 }
 
 header{
+    display: grid;
     height: 5rem;
-    border: 1px solid;
     text-transform: uppercase;
     grid-template-columns: 3fr repeat(2, 4.75rem);
     align-content: center;
@@ -92,15 +92,15 @@ header{
     align-self: center;
 }
 .blogs-container{
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(13.6em, 1fr));
     grid-auto-rows: 25rem;
     gap: 2rem;
     height: 100%;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 .blog-item{
-    border: 1px solid;
     display: grid;
     grid-template-rows: 15rem 2rem 2.3rem auto;
     align-items: center;
@@ -127,17 +127,83 @@ footer{
     padding: 3em 4em;
     font-size: 12px;
 }
+/* About me */
+.about-container{
+    display: grid;
+    gap: 2rem;
+}
+.about-title{
+    align-self: center;
+}
+.about-img{
+    margin: 0 auto;
+    border-radius: 3px;
+    width: 80%;
+}
+.about-body{
+    display: grid;
+    grid-column: 1/-1;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+.recent-posts{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.recent-posts-title{
+    width: 6em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* media quieries */
 @media (min-width: 576px) {
     header,
     article,
+    .about-container,
     footer{
-        padding: 2.5rem;
+        padding: 1.7rem 2.5rem;
+    }
+    .article-hero{
+        grid-template-rows: 3fr 30px auto 2fr;
+        height: 25rem;
+    }
+    .about-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .about-img{
+        grid-row: 1/2;
+        width: 100%;
+    }
+    .about-preview{
+        grid-column: 2/3;
+        width: 100%;
+        margin: 0 auto;
     }
 }
-@media (mid-width: 1040px){
+@media(min-width: 767px){
     header,
     article,
+    .about-container,
     footer{
-        padding: 5rem;
+        padding: 2.5rem 5rem;
     }
+    .blogs-container {
+    grid-template-columns: repeat(auto-fit, minmax(16.5em, 1fr));
+    }
+    .preview-hero{
+    width: 80%;
+    }
+    .article-hero{
+        grid-template-rows: 3fr 30px auto 1fr;
+        height: 30rem;
+    }
+}
+@media (min-width: 1040px){
+    .blogs-container {
+    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+}
 }
